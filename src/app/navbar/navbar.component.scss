@@ -1,0 +1,36 @@
+@import "../theme.scss";
+.navbar{
+    width: 100%;
+    padding: 10px;
+    background-color: #5D5FFC;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    ul{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li{
+            padding: 10px;
+            transition: 0.3s;
+        }
+        li:hover{
+            background: rgba(255,255,255,.1)
+        }
+    }
+    button{
+        background-color: transparent;
+        border: none;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span{
+            margin-left: 10px;
+        }
+    }
+    button:hover{
+        color: $pink;
+    }
+}

@@ -1,0 +1,56 @@
+<div class="searchbar-container">
+  <i class="fa-solid fa-magnifying-glass"></i
+  ><input
+    type="text"
+    class="search-bar"
+    placeholder="Buscar"
+    [value]="valueSearch"
+    (input)="onChange($event)"
+  />
+  <div class="list-searchs" *ngIf="valueSearch !== ''">
+    <div class="top-controls">
+      <div class="searchbar-container-2">
+        <i class="fa-solid fa-magnifying-glass"></i
+        ><input
+          type="text"
+          class="search-bar"
+          placeholder="Buscar"
+          [value]="valueSearch"
+          (input)="onChange($event)"
+        />
+      </div>
+
+      <button (click)="closeModal()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="search-content">
+      <div class="searchs">
+        <div class="header-searchs">
+          <h2>Archivos</h2>
+        </div>
+        <ul>
+          <li *ngFor="let file of searchs.files">
+            <button>
+              <i class="fa-regular fa-file"></i>
+              <span>{{ file.name }}</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="searchs">
+        <div class="header-searchs">
+          <h2>Carpetas</h2>
+        </div>
+        <ul>
+          <li *ngFor="let folder of searchs.folders">
+            <button (click)="goToFile(folder._id)">
+              <i class="fa-regular fa-folder"></i>
+              <span>{{ folder.name }}</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

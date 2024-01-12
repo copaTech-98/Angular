@@ -1,0 +1,93 @@
+<ul class="main-list">
+  <li>
+    <ng-container *ngIf="document.folder.name">
+      <div class="document-folders" *ngIf="loadingData">
+        <button
+          (click)="toggleFolder(document.folder)"
+          [ngClass]="{ 'delete': document.folder.name === 'Eliminado' }"
+          [disabled]="document.folder.name === 'Eliminado'"
+        >
+          <i
+            class="far"
+            [ngClass]="{
+              'fa-folder': !document.folder.isExpanded,
+              'fa-folder-open': document.folder.isExpanded
+            }"
+          ></i>
+          {{ document.folder.name }}
+        </button>
+        <ul *ngIf="toolsOpen" class="tools">
+          <li class="close-tools">
+            <button (click)="handleToolsOpen()">
+              <i class="fa-regular fa-circle-xmark"></i>
+            </button>
+          </li>
+          <li>
+            <button (click)="createFile()">
+              <i class="fa-solid fa-file-circle-plus"></i>
+              <span>Crear archivo</span>
+            </button>
+          </li>
+          <li>
+            <button (click)="createFolder()">
+              <i class="fa-solid fa-folder-plus"></i>
+              <span>Crear Carpeta</span>
+            </button>
+          </li>
+          <li *ngIf="document.folder.name !== 'root'">
+            <button (click)="deleteFolderOrFile(document.folder._id, 'folder')">
+              <i class="fa-solid fa-trash"></i>
+              <span>Eliminar Carpeta</span>
+            </button>
+          </li>
+          <li *ngIf="document.folder.name !== 'root'">
+            <button
+              (click)="renameFolder(document.folder._id, document.folder.root)"
+            >
+              <i class="fa-regular fa-pen-to-square"></i>
+              <span>Renombrar Carpeta</span>
+            </button>
+          </li>
+        </ul>
+        <ul *ngIf="!toolsOpen">
+          <li>
+            <button (click)="handleToolsOpen()">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="!document.folder.name">
+      <span>No se encontraron datos.</span>
+    </ng-container>
+    <div class="document-folders" *ngIf="!loadingData">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+    <ul class="main-list" *ngIf="document.folder.isExpanded">
+      <!-- Mostrar subcarpetas si existen -->
+      <ng-container *ngIf="document.folders.length > 0">
+        <li *ngFor="let subfolder of document.folders">
+          <app-document-list
+            [folderId]="folderId"
+            [document]="subfolder"
+            [parent]="document"
+          ></app-document-list>
+        </li>
+      </ng-container>
+      <!-- Mostrar archivos -->
+      <li *ngFor="let file of document.files">
+        <button (click)="loadFileContent(file)">
+          <i class="fa-regular fa-file"></i>
+          {{ file.name }}
+        </button>
+        <button
+          (click)="deleteFolderOrFile(file._id, 'file')"
+          class="buttonDeleteFile"
+        >
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </li>
+    </ul>
+  </li>
+</ul>

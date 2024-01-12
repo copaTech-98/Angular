@@ -1,0 +1,48 @@
+@import "../theme";
+.main-container{
+    width: 100%; 
+    margin-right: auto; 
+    margin-left: auto;
+    min-height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    
+   
+}
+.main-editor{
+    padding: 20px;
+    flex-grow: 1;
+}
+.main-list-folders{
+    padding: 20px 5px;
+    min-width: 300px;
+    width: 300px;
+    max-width: 300px;
+    background: rgba(0,0,0,.01);
+    overflow: scroll;
+}
+/* Estilos para las barras de desplazamiento en navegadores basados en WebKit (como Chrome y Safari) */
+.main-list-folders::-webkit-scrollbar {
+    width: 2px; /* Ancho de la barra de desplazamiento */
+    height: 4px;
+    border-radius: 20px;
+  }
+  
+  .main-list-folders::-webkit-scrollbar-track {
+    background: transparent; /* Color de fondo de la pista de desplazamiento */
+    height: 4px;
+    border-radius: 20px;
+  }
+  
+  .main-list-folders::-webkit-scrollbar-thumb {
+    background: $primary; /* Color del "pulgarcito" de la barra de desplazamiento */
+    height: 4px;
+    width: 8px;
+    border-radius: 20px;
+  }
+  
+  /* Estilos para las barras de desplazamiento en navegadores basados en Firefox */
+//   .main-list-folders {
+//     scrollbar-width: thin; /* Ancho de la barra de desplazamiento */
+//     scrollbar-color: #888 #f1f1f1; /* Color del "pulgarcito" y fondo de la pista de desplazamiento */
+//   }

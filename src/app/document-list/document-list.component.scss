@@ -1,0 +1,102 @@
+@import "../theme.scss";
+ul{
+    list-style: none;
+    
+
+}
+.document-folders{
+    display: flex;
+    position: relative;
+    min-width: 195px;
+    max-width: max-content;
+    justify-content: space-between;
+    ul{
+        list-style: none;
+        display: flex;
+        li{
+            padding: 5px;
+            button{
+                transition: 0.3s;
+                i{
+                   font-size: 14px !important;
+                   color: $ternaryBlack;
+                   transition: 0.3s;
+                }
+                i:hover{
+                    color: $primary;
+                }
+            }
+            button:hover{
+                color: $primary;
+            }
+        }
+    }
+    ul.tools{
+        padding: 20px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        position: absolute;
+        right: 0;
+        top: 0;
+        box-shadow: 0 0 20px rgba(0,0,0,.3);
+        background: white;
+        z-index: 99999;
+        border-radius: 8px;
+        .close-tools{
+            width: 100% !important;
+            display: flex !important;
+            justify-content: flex-end !important;
+            align-items: center;
+            position: absolute;
+            right: 0;
+            top:0;
+            button{
+                i{font-size: 20px !important;}
+            }
+        }
+    }
+}
+.item-folder{
+    display: flex;
+    align-items: center;
+ 
+    justify-content: space-between !important;
+    
+}
+.main-folders{
+    background: none;
+    border:none;
+    margin-left: 5px;
+    color: $primary
+}
+button{
+    font-size: 14px;
+    transition: 0.3s;
+}
+button:hover{
+    color: $primary;
+}
+button:focus{
+    color: $primary;
+}
+i{
+    font-size:20px ;
+    margin-right: 5px;
+}
+.buttonDeleteFile{
+    i{
+        font-size: 14px;
+        color: #585858;
+        margin-left: 20px;
+        transition: 0.3s;
+
+    }
+    i:hover{
+        color: $pink;
+        font-size: 16px;
+    }
+    
+}
+
+ 

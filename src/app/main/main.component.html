@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+<div class="main-container">
+  <div class="main-list-folders">
+    <app-document-list [folderId]="idRoot"></app-document-list>
+  </div>
+  <div class="main-editor">
+    <app-header-editor></app-header-editor>
+    <angular-editor
+      [config]="config"
+      [(ngModel)]="editorContent"
+      *ngIf="nameDocument.name"
+    >
+      <ng-template #customButtons let-executeCommandFn="executeCommandFn">
+        <ae-toolbar-set>
+          <ae-button
+            iconClass="fa-solid fa-ticket-simple"
+            title="Etiqueta negra"
+            (buttonClick)="executeCommandFn('insertHtml', etiquetaBlack)"
+          >
+          </ae-button>
+          <ae-button
+            iconClass="fa-brands fa-square-js"
+            title="Insertar Código JavaScript"
+            (buttonClick)="alternarCodigoJavaScript(executeCommandFn)"
+            [ngClass]="{
+              'codeJs': !codigoJavaScriptActivo,
+              'codeJs-active': codigoJavaScriptActivo
+            }"
+          >
+          </ae-button>
+        </ae-toolbar-set>
+      </ng-template>
+    </angular-editor>
+  </div>
+</div>

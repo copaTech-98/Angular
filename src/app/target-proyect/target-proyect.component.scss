@@ -1,0 +1,97 @@
+@import "../theme.scss";
+ul.tools{
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    right: 0;
+    top: 0;
+    box-shadow: 0 0 20px rgba(0,0,0,.3);
+    background: white;
+    z-index: 99999;
+    border-radius: 8px;
+    list-style: none;
+    display: flex;
+    li{
+        padding: 5px;
+        button{
+            transition: 0.3s;
+            padding: 5px 10px;
+            margin-top: 10px;
+            span{
+                color: $ternaryBlack !important;
+                font-size: 12px !important;
+            }
+            i{
+               font-size: 14px !important;
+               color: $ternaryBlack !important;
+               transition: 0.3s !important;
+               margin-right: 10px !important;
+            }
+            i:hover{
+                color: $primary !important;
+            }
+        }
+        button:hover span {
+            color: $primary !important;
+         
+        }
+    }
+    .close-tools{
+        width: 100% !important;
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        top:0;
+        
+        margin-bottom: 20px;
+        button{
+
+            i{font-size: 15px !important;}
+        }
+    }
+}
+
+
+.target-container{
+        background:white;
+        box-shadow: 0 0 20px rgba(0,0,0,.2);
+       flex-grow: 1;
+        width: 100%;
+        margin:10px;
+        transition: 0.3s;
+        div.target-header{
+            padding: 10px 20px;
+            min-width: 100%;
+            background: $headerGradient;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            span{
+                color: white;
+                font-size: 1.8rem;
+                line-height: 1.35;
+                letter-spacing: 1.5px;
+                font-family: sans-serif;
+            }
+            button{
+                color: white;
+               
+            }
+        }
+        .target-description{
+            padding: 20px;
+            width: 100%;
+            text-align: justify;
+            p{
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                color: rgba($color: #000000, $alpha: .6)
+            }
+        }
+    }
+    .target-container:hover{
+        transform: translateY(-15px);
+    }

@@ -1,0 +1,47 @@
+@import "../theme.scss";
+.main-header{
+    background: $headerGradient ;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    ul{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color:white;
+        li{
+            margin-right: 20px;
+            color: white;
+            button{
+                color:white;
+                font-size: 25px;
+                margin-right: 10px;
+                transition: 0.3s;
+            }
+            button:hover{
+                color: $blackMate;
+
+            }
+            button:focus{
+                color: $blackMate;
+
+            }
+        }
+    }
+    .main-name-document{
+        color: white;
+        .title{
+            font-weight: bold;
+            margin-right: 10px;
+            letter-spacing: 2px;
+            .name-document{
+                font-style: italic;
+                font-weight: lighter;
+            }
+        }
+    }
+}

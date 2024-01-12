@@ -1,0 +1,18 @@
+<div class="main-header">
+  <div class="main-name-document">
+    <span class="title" *ngIf="!loading"
+      >Document:
+      <span class="name-document">{{
+        nameDocument.name ? nameDocument.name + ".html" : null
+      }}</span></span
+    >
+    <app-loading-spinner *ngIf="loading"></app-loading-spinner>
+  </div>
+  <ul>
+    <li>
+      <button (click)="saveDocument()">
+        <i class="fa-solid fa-floppy-disk"></i>
+      </button>
+    </li>
+  </ul>
+</div>

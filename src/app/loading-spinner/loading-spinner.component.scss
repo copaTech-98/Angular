@@ -1,0 +1,46 @@
+@import "../theme.scss";
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Define una animación de palpitación */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+.container-loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span{
+        color: $primary;
+        font-style: italic;
+    }
+  }
+  .container-spinner{
+    animation: rotate 0.5s linear infinite;
+  /* Configura el origen de la transformación para que el centro del elemento sea el punto de referencia */
+  transform-origin: center;
+  padding: 10px;
+
+  }
+.spinner{
+    width: 20px;
+    height: 20px;
+    border-radius: 40px;
+    border-right: 4px solid $primary;
+    animation: pulse 1s linear infinite;
+    transform-origin: center;
+}

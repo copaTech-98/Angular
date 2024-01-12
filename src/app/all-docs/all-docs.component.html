@@ -1,0 +1,18 @@
+<div>
+  <app-navbar></app-navbar>
+  <div>
+    <h2 class="title">Todos los documentos</h2>
+    <div class="docs-tools">
+      <button (click)="createFolder()">Agregar documentación</button>
+    </div>
+    <div class="targets">
+      <div *ngFor="let folder of folders" class="target-container">
+        <app-target-proyect
+          [folder]="folder"
+          [folders]="folders"
+          class="target-container"
+        ></app-target-proyect>
+      </div>
+    </div>
+  </div>
+</div>

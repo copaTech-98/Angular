@@ -1,0 +1,158 @@
+@import "../theme.scss";
+.search-content{
+    width: 90vw;
+    height: 75vh;
+    background: white;
+    box-shadow: 0px 5px 20px rgba(0,0,0,.2);
+    padding: 20px;
+}
+.searchs{
+    width: 100%;
+    height: 50%;
+    padding: 20px;
+    background: white;
+    transition: 0.3s;
+   
+    overflow: scroll;
+    ul{
+        li{
+            
+            color: black;
+            button{
+                padding: 10px 20px;
+                color: #252525;
+                transition: 0.3s;
+                i{
+                    color: #252525;
+                    margin-right: 20px;
+                    font-size: 18px;
+                }
+            }
+            button:hover{
+                background: rgba(0,0,0,.3);
+                color: $pink;
+                transform: translateY(-5px);
+                i{
+                    color:$pink !important;
+                }
+            }
+        }
+    }
+}
+.searchbar-container{
+    background: rgba($color: #ffff, $alpha: .2);
+    padding: 8px 15px;
+    margin: 0 10px;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 40px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    transition: 0.3s;
+    border-bottom: 1px solid rgba(255,255,255,.6);
+    border-right: 0.5px solid rgba(255,255,255,.3);
+    i{
+        font-weight: bold;
+        color: white;
+    }
+    input.search-bar{
+        background: none !important;
+        border: none;
+        transition: 0.3s;
+        padding-left:10px;
+        padding-right: 10px;
+        color: white;
+        }
+    input:focus-visible{
+        outline-offset: none !important;
+        border:none;
+        outline: none;
+    }
+}
+.searchbar-container:hover{
+    width: 200px ;
+    cursor: pointer;
+}
+input:focus-visible  .searchbar-container{
+    width: 200px !important;
+    cursor: pointer;
+}
+
+.list-searchs{
+    position: absolute;
+    top: 0px;
+    padding: 20px;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(20px);
+    background: rgba($color: #ffff, $alpha: .2);
+    left: 0px;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s;
+    .top-controls{
+        display: flex;
+        padding: 20px;
+        justify-content: space-between;
+        width: 95vw;
+        align-items: center;
+        button{
+            padding: 5px 10px;
+            background: $pink;
+            border-radius: 4px;
+            transition: 0.3s;
+            i{
+                font-size: 20px;
+                color: white;
+            }
+        }
+        button:hover{
+            background: white;
+            color: black;
+            i{
+                color:black;
+            }
+        }
+    }
+    ul{
+        list-style: none;
+        padding: 20px;
+    }
+}
+.searchbar-container-2{
+    width: 400px;
+    background: white;
+    padding: 15px 20px;
+    box-shadow: 0px 5px 20px rgba(0,0,0,.2);
+    border-radius: 4px;
+    input{
+        color: #252525 !important;
+    }
+    i{
+        color: #252525 !important
+    }
+
+}
+.searchs::-webkit-scrollbar {
+    width: 2px; /* Ancho de la barra de desplazamiento */
+    height: 4px;
+    border-radius: 20px;
+  }
+  
+  .searchs::-webkit-scrollbar-track {
+    background: transparent; /* Color de fondo de la pista de desplazamiento */
+    height: 4px;
+    border-radius: 20px;
+  }
+  
+  .searchs::-webkit-scrollbar-thumb {
+    background: $primary; /* Color del "pulgarcito" de la barra de desplazamiento */
+    height: 4px;
+    width: 8px;
+    border-radius: 20px;
+  }

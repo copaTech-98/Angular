@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+
+<div class="home-container">
+  <div class="main-list-folders">
+    <div class="main-list-editar">
+      <button (click)="goToEdit()">
+        <span>Editar</span><i class="fa-solid fa-pen-to-square"></i>
+      </button>
+    </div>
+    <app-document-list [folderId]="idRoot"></app-document-list>
+  </div>
+  <div class="home-view-document" [innerHTML]="editorContent"></div>
+</div>

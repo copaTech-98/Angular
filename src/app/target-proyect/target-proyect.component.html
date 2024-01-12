@@ -1,0 +1,35 @@
+<button class="target-container" (click)="goToFolders(folder._id)">
+  <div>
+    <div class="target-header">
+      <span>{{ folder.name }}</span>
+      <ul *ngIf="toolsOpen" class="tools">
+        <li class="close-tools">
+          <button (click)="toggleTools()">
+            <i class="fa-regular fa-circle-xmark"></i>
+          </button>
+        </li>
+        <li>
+          <button (click)="deleteProject(folder._id)">
+            <i class="fa-solid fa-trash"></i>
+            <span>Eliminar Proyecto</span>
+          </button>
+        </li>
+        <li>
+          <button (click)="editProject(folder)">
+            <i class="fa-regular fa-pen-to-square"></i>
+            <span>Editar proyecto</span>
+          </button>
+        </li>
+      </ul>
+
+      <button *ngIf="!toolsOpen" (click)="toggleTools()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+  <div class="target-description">
+    <p>
+      {{ folder.description }}
+    </p>
+  </div>
+</button>
